@@ -1,0 +1,83 @@
+/* services section */
+.servicesWrapper {
+    margin:auto;
+    text-align:center;
+    @include breakpoint(40em) {
+        &.two, &.four{
+            .service {
+                width:50%;
+            }
+        }
+        &.three, &.five, &.six{
+            .service {
+                width:33%;
+                p {
+                    font-size:85%;
+                }
+            }
+        }
+    }
+    @include breakpoint(65em) {
+        &.four{
+            .service {
+                width:25%;
+            }
+        }
+        &.three, &.five, &.six{
+            .service {
+                p {
+                    font-size:100%;
+                }
+            }
+        }
+    }
+    @include breakpoint(85em) {
+        &.five {
+            .service {
+                width:20%;
+                p {
+                    font-size:85%;
+                }
+            }
+        }
+        &.six {
+            .service {
+                width:16.5%;
+                p {
+                    font-size:85%;
+                }
+            }
+        }
+    }
+    @include breakpoint(68em) {
+        width:120%;
+        margin:$basePadding*2 -10% 0;
+    }
+    @include breakpoint(85em) {
+        width:150%;
+        margin:$basePadding*2 -25% 0;
+    }
+    @include breakpoint(100em) {
+        width:180%;
+        margin:$basePadding*2 -40% 0;
+    }
+    .service {
+        vertical-align:top;
+        margin-top:$basePadding*2;
+        .squareImage {
+            width:180px;
+            height:180px;
+        }
+        .largeIcon { 
+            height:180px;
+        }
+        @include breakpoint(40em) {
+            display:inline-block;
+            .servicePadding {
+                padding:0 10%;
+            }
+        }
+        @include breakpoint(65em) {
+        }
+    }
+}

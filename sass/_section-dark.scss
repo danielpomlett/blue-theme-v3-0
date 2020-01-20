@@ -1,0 +1,112 @@
+/* Dark colour scheme */
+.dark {
+    &.section {
+        background-color:$colourBody;
+    }
+    h1,h2,h3,h4,h5,h6,p,
+    blockquote, cite,
+    .details,
+    .navWrapper a,
+    &.nextPrev i.nextIcon{
+        color:$colourBodyInvert;
+    }
+
+    .tint {
+        background: linear-gradient(180deg, rgba(0,0,0,.35) 30vh, rgba(0,0,0,1) 30vh);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 );
+        @include breakpoint(40em) {
+            background: rgba(0,0,0, .5);
+        }
+    }
+    &.right {
+        .tint {
+            @include breakpoint(65em) {
+                background: rgba(0,0,0, .5);
+                background: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,.75) 100%);
+            }
+        }
+    }
+    &.left {
+        .tint {
+            @include breakpoint(65em) {
+                background: rgba(0,0,0, .5);
+                background: linear-gradient(270deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,.75) 100%);
+
+            }
+        }
+    }
+    &.headerWrapper.header-small {
+        @media(min-height: 800px) and (min-width:65em) {
+            background-color:$colourBody;
+        }
+    }
+    &.scrollMenu {
+        span {
+            @media(min-height: 800px) and (min-width:65em) {
+                background-color:$colourBodyInvert;
+            }
+        }
+        i {
+            @media(min-height: 800px) and (min-width:65em) {
+                color:$colourBodyInvert;
+            }
+        }
+    }
+    .logoWrapper {
+        img {
+            @media(min-height: 800px) and (min-width:65em) {
+            }
+        }
+    }
+    .page_item_has_children,
+    .menu-item-has-children {
+        > a {
+            &:after {
+                border-top: 4px solid $colourBodyInvert;
+            }
+        }
+        > .children,
+        > .sub-menu {
+            background-color:$colourBodyInvert;
+            &:before {
+                border-bottom: 7px solid $colourBodyInvert;
+            }
+            a {
+                color:$colourBody;
+            }
+            .page_item_has_children a{
+                &:after { 
+                    border-right:$colourBody;
+                }
+            }
+        }
+    }
+    &.prev,
+    &.next {
+        background-color:$colourBody;
+        color:$colourBodyInvert;
+    }
+    .formElement {
+        border:1px solid $colourBodyInvert;
+    }
+    .button {
+        background-color:$colourButtonInvert;
+        color:$colourBody;
+        &:hover {
+            background-color:$colourButtonInvertHover;
+            color:$colourBody;
+        }
+    }
+    .largeIcon {
+        color:$colourBodyInvert;
+    }
+    .mobileButton span {
+        background-color:$colourBodyInvert;
+    }
+    .navWrapper {
+        background-color:$colourBody;
+        @include breakpoint(65em) { 
+            background-color:transparent;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+/* FOOTER AREA */
+/* Footer */
+.footerWrapper {
+    .innerPadding {
+       padding:$basePadding;
+        @include breakpoint(65em) {
+            padding:($basePadding*2);
+        }
+    }
+    .copyright {
+        font-size:75%;
+    }
+    .logoWrapper {
+        padding-left:0;
+        width:auto;
+        margin-left:0;
+        position:relative;
+        span {
+            margin:0;
+        }
+        h1 {
+            margin:0;
+        }
+    }
+    .footerSocial {
+        list-style:none;
+        padding:0;
+        margin:$basePadding*1.5 0 $basePadding*2;
+        display:flex;
+        justify-content:left;
+        font-size:150%;
+        li {
+            margin:0 $basePadding/2;
+        }
+        span {
+            visibility: hidden;
+            font-size: 0;
+        }
+        @include breakpoint(65em) {
+        }
+    }
+}
+.footerWidgetArea {
+}
+
+/* Footer nav menu */
+.footerNav {
+    ul {
+        list-style:none;
+        padding:0;
+        margin:0;
+        li {
+            margin-bottom:$basePadding/3;
+        }
+    }
+}

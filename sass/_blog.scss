@@ -1,0 +1,254 @@
+/* ------------ LOOP GRID -----------------*/
+.gridWrapper {
+    padding-top:$logoHeight+$basePadding*3;
+    @include breakpoint(40em) {
+        margin:0 -$basePadding/2;
+    }
+    @include breakpoint(65em) {
+        margin:0;
+    }
+}
+.postGridItem {
+    @include breakpoint(40em) {
+        width:50%;
+        display: inline-block;
+        vertical-align:top;
+    }
+    @include breakpoint(65em) {
+        width:33.333%;
+    }
+    @include breakpoint(100em) {
+        width:25%;
+    }
+}
+/* ------------ LOOPS ------------*/
+.postWrapper {
+    display:block;
+    overflow:hidden;
+    margin-bottom:$basePadding*2;
+    .postHeader,
+    .details,
+    .excerpt {
+        color:$colourBody;
+        display:block;
+        margin-bottom:$basePadding/2;
+    }
+    span {
+       color:$colourBody; 
+    }
+    @include breakpoint(40em) {
+        margin:0 $basePadding/2 $basePadding;
+    }
+    @include breakpoint(65em) {
+        margin:0 $basePadding $basePadding;
+    }
+    &:hover {
+        span {
+           color:$colourAnchor; 
+        }
+        .featuredImage {
+            background-size:auto 105%;
+        }
+    }
+}
+.featuredImage {
+    display:block;
+    background-color:#ededed;
+    background-image:url(../images/default.png);
+    background-repeat: no-repeat;
+    background-size:auto 100%;
+    background-position:center center;
+    margin-bottom:$basePadding;
+    padding-bottom:60%;
+    &.default {
+        display:none;
+    }
+    @include breakpoint(40em) {
+        padding-bottom:60%;
+        &.default {
+            display:block;
+        }
+    }
+}
+.details {
+    margin:$basePadding 0;
+    @include breakpoint(65em) {
+        margin:0 0 $basePadding;
+    }
+}
+.mainContentSection {
+    .copyWrapper {
+        text-align: left;
+    }
+   .details {
+        @include breakpoint(65em) {
+            margin:-$basePadding/2 0 $basePadding;
+        }
+    } 
+}
+.excerpt {
+    @include breakpoint(40em) {
+        font-size:85%;
+    }
+}
+
+/* --------- PAGINATION  STYLES ---------*/
+.paginationWrapper{
+    &:before {
+        content:'';
+        display:block;
+        clear:both;
+    }
+  font-size:85%;
+  .page-numbers {
+    margin-right:5px;
+  }
+  .prev {
+    margin-right:$basePadding/2;
+  }
+  .next {
+    margin-left:($basePadding/2)-5;
+  }
+  &.padded {
+    margin:0 $basePadding;
+  }
+}
+
+/* Sticky post */
+.sticky {
+    font-size:inherit;
+}
+/* ------------ SINGLE POST STYLES ------------*/
+
+/* Prev/Next */
+.nextPrev {
+    display:block;
+    vertical-align:bottom;
+    background-color:transparent;
+    color:$colourBodyInvert;
+    position:relative;
+    @include breakpoint(65em) {
+        z-index:3;
+        position:fixed;
+        display:block;
+        width:200px+$basePadding*6;
+    }
+    &:hover {
+        color:$colourBodyInvert; 
+        i {
+        }  
+    }
+    .nextPrevInner {
+        justify-content: center;
+        display:flex;
+        position:relative;
+        align-items:center;
+        width:100%;
+        @include breakpoint(65em) {
+            height:72px;
+        }
+    }
+    &.prev {
+        @include breakpoint(65em) {
+            margin-left:-(200px+$basePadding*6);
+            left:0;
+            bottom:$basePadding;
+            &:hover {
+               margin-left:0;
+            }
+        }
+    }
+    &.next {
+        @include breakpoint(65em) {
+            margin-right:-(200px+$basePadding*6);
+            right:0;
+            bottom:$basePadding;
+            &:hover {
+               margin-right:0;
+            }
+        }
+    }
+    i{
+        font-size: 200%;
+        align-items: center;
+        top: 0;
+        margin-top: 0;
+        padding:$basePadding $basePadding/2;
+        opacity:.35;
+        &.prevIcon {
+            margin-right:$basePadding/2;
+        }
+        &.nextIcon {
+            margin-left:$basePadding/2;
+        }
+        @include breakpoint(65em) {
+            position: absolute;
+            display: flex;
+            &.prevIcon {
+                padding:$basePadding $basePadding $basePadding $basePadding*2;
+                right: -74px;
+            }
+            &.nextIcon {
+                padding:$basePadding $basePadding*2 $basePadding $basePadding;
+                left: -74px;
+           }
+        }
+    }
+}
+.nextPrevTitle{
+    width:200px;
+    font-size:85%;
+    line-height:1em;
+    &.prevTitle {
+
+    }
+    &.nextTitle {
+        text-align:right;
+    }
+}
+.nextPrevThumb {
+    display:block;
+    width:$basePadding*3;
+    height:$basePadding*3;
+    background-size:cover;
+    background-position:center;
+    border-radius:50%;
+    background-color:#ededed;
+    &.prevThumb {
+        margin-right:$basePadding;
+    }
+    &.nextThumb {
+        margin-left:$basePadding;
+    }
+    @include breakpoint(65em) {
+    }
+}
+/* ------------ COMMENTS STYLES ------------*/
+.commentList {
+    ul {
+        list-style:none;
+    }
+    .commentHeader {
+        margin-bottom:$basePadding;
+    }
+    .comment {
+        margin-bottom:$basePadding;
+        @include breakpoint(40em) {
+        }
+        @include breakpoint(65em) {
+            margin-bottom:$basePadding*2;
+        }
+    }
+    .avatar {
+        width: $basePadding*3;
+        margin-bottom:$basePadding/2;
+        @include breakpoint(65em) {
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+.commentFooter {
+    a {
+    }
+}

@@ -1,0 +1,179 @@
+/* Page Sections */
+.section {
+    opacity:0;
+    background-size:150% auto;
+    background-position:top center;
+    background-repeat:no-repeat;
+    @include breakpoint(40em) {
+        background-size:cover;
+        background-position:center center;
+    }
+    &.longSection {
+        padding:20vh 0;
+    }
+    &.fixed {
+        @include breakpoint(65em) {
+            background-attachment:fixed;
+        }
+    }
+    .widthWrapper {
+        margin:auto;
+    }
+    .squareImage {
+        @include breakpoint(65em) {
+        }
+    }
+    .readMore {
+        display:inline-block;
+    }
+    .tint {
+        background: linear-gradient(180deg, rgba(255,255,255,.35) 30vh, rgba(255,255,255,1) 30vh);
+        padding-top:15vh;
+        @include breakpoint(40em) {
+            padding:0;
+            background: rgba(255,255,255, .5);
+        }
+    }
+    &.right {
+        .tint {
+            @include breakpoint(65em) {
+                background: rgba(255,255,255, .5);
+                background: linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,.75) 100%);
+            }
+        }
+    }
+    &.left {
+        .tint {
+            @include breakpoint(65em) {
+                background: linear-gradient(270deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,.75) 100%);
+            }
+        }
+    }
+    &:first-child {
+        .innerPadding{
+            padding-top:$basePadding*4;
+            @include breakpoint(65em) {
+                padding-top:$basePadding*6;
+            }
+        }
+    }
+}
+.sectionFlex {
+    display:flex;
+    width:100%;
+    min-height:100vh;
+    @media screen and (max-height:650px) {
+        min-height:600px;
+        height:100%;
+    }
+    max-height:auto;
+    align-items:center;
+    .innerPadding {
+        max-width:1500px;
+        margin:auto;
+        width:100%;
+        padding:$basePadding;
+        @include breakpoint(40em) {
+           padding:$basePadding*2 $basePadding; 
+        }
+        @include breakpoint(65em) {
+           padding:$basePadding*4; 
+        }
+        @media screen and (min-height: 800px) and (min-width:65em) {
+        }
+    }
+}
+.topContent {
+    .sectionFlex {
+        display:block;
+    }
+}
+.copyWrapper {
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    @include breakpoint(65em) {
+    }
+    :last-child {
+    }
+}
+.left,.right {
+    .largeIcon {
+        margin-bottom:$basePadding*2;
+    }
+    @include breakpoint(40em) {
+    .copyWrapper :last-child {
+        margin-bottom:0;
+    }
+    .largeIcon {
+            height:100%;
+            margin-bottom:auto !important;
+            i {
+                font-size:1200%;
+            }
+        }
+    }
+    @include breakpoint(65em) {
+        margin:0;
+        .squareImage {
+            width:450px;
+            height:450px;
+        }
+        .grid {
+            display:flex;
+            align-items:center;
+            .first {
+                order:1;
+            }
+            .second {
+                order:2;
+            }
+        }
+    }
+    &.widthWrapper{
+        max-width:1250px;
+    }
+    .copyWrapper {
+        width:100%;
+        max-width:100%;
+        @include breakpoint(40em) {
+            text-align:left;
+        }
+    }
+}
+.contentSection {
+    @include breakpoint(65em) {
+        .copyWrapper {
+            text-align:left;
+        }
+    }
+}
+.squareImage {
+    width:250px;
+    height:250px;
+    background-size:cover;
+    background-position:center center;
+    margin:0 auto $basePadding;
+    @include breakpoint(65em) {
+        margin-bottom:$basePadding*2;
+    }
+}
+.largeIcon {
+    display:flex;
+    align-items:center;
+    margin:0 auto $basePadding;
+    @include breakpoint(65em) {
+        margin-bottom:$basePadding*2;
+    }
+    i {
+        margin:auto;
+        font-size:800%;
+    }
+}
+
+.gifImage {
+    margin-bottom:$basePadding*2;
+    @include breakpoint(40em) {
+        margin-bottom:0;
+    }
+}

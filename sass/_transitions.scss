@@ -1,0 +1,379 @@
+//Mobile icon transform
+.mobileButton {
+   -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+.mobileButton span {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+.mobileButton.open span {
+  &:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);    
+    }
+}
+#logo,
+#logo img {
+  transition: opacity .25s, width .5s;
+}
+/* load in transitions */
+.scrollMenu,
+.contentWrapper,
+.logoWrapper,
+.mainNav,
+.mobileButtonWrapper,
+.noLogo h1,
+.footerSocial{
+  opacity:0;
+}
+.loaded {
+  .contentWrapper,
+  .postWrapper h3,
+  .postWrapper .details,
+  .postWrapper .excerpt,
+  .logoWrapper,
+  .mainNav,
+  .mobileButtonWrapper,
+  .noLogo h1,
+  .footerSocial{
+    opacity:1;
+    transition:opacity 1s;
+  }
+  .postWrapper .featuredImage{
+    opacity:1;
+    transition:opacity 1s, background-size .3s;
+  }
+  .scrollMenu {
+    opacity:1;
+    transition:opacity 1s,margin-right .3s;
+  }
+  .postWrapper h3 {
+    transition-delay:.5s;
+  }
+  .postWrapper .details,
+  .mainNav,
+  .mobileButtonWrapper,
+  .logoWrapper {
+    transition-delay:.75s;
+  }
+  .postWrapper .excerpt {
+    transition-delay:1s;
+  }
+  .footerSocial {
+    transition-delay:1.5s;
+  }
+  .mobileButton {
+    transition: top .3s, right .3s;
+    transition-delay:0, 0;
+  }
+  .scrollMenu,
+  .contentWrapper {
+    transition-delay:1.25s, .5s;
+  }
+  .navWrapper {
+    opacity:1;
+  }
+  .headerWrapper{
+    &.header-small{
+      transition:background-color .5s
+    }
+  }
+  .animating{
+    opacity:1;
+  }
+  @include breakpoint(65em) {
+    /* Page section transitions */
+    .animating{
+      transition:opacity .25s;
+      &.left {
+        h2, h3 {
+            animation-name: fadeInLeft;
+            animation-duration:.5s;
+            animation-fill-mode: both;
+          }
+          p {
+              animation-name: fadeInLeft;
+              animation-delay:.5s;
+              animation-duration:.5s;
+              animation-fill-mode: both;
+          }
+        .readMore {
+          animation-name: fadeInLeft;
+          animation-delay:.75s;
+          animation-duration:.5s;
+          animation-fill-mode: both;
+        }
+        .squareImage,
+        .largeIcon {
+          animation-name: fadeInLeft;
+          animation-delay:1s;
+          animation-duration:.5s;
+          animation-fill-mode: both;
+        }
+      }
+      &.right {
+          h2, h3 {
+            animation-name: fadeInRight;
+            animation-duration:.5s;
+            animation-fill-mode: both;
+          }
+          p {
+              animation-name: fadeInRight;
+              animation-delay:.5s;
+              animation-duration:.5s;
+              animation-fill-mode: both;
+          }
+          .readMore {
+            animation-name: fadeInRight;
+            animation-delay:.75s;
+            animation-duration:1s;
+            animation-fill-mode: both;
+          }
+          .squareImage,
+          .largeIcon {
+            animation-name: fadeInRight;
+            animation-delay:1s;
+            animation-duration:1s;
+            animation-fill-mode: both;
+          }
+      }
+      &.center {
+        h2, h3 {
+            animation-name: fadeInUp;
+            animation-duration:.5s;
+            animation-fill-mode: both;
+        }
+        p {
+            animation-name: fadeInUp;
+            animation-delay:.5s;
+            animation-duration:.5s;
+            animation-fill-mode: both;
+        }
+        .readMore {
+          animation-name: fadeInUp;
+          animation-delay:.75s;
+          animation-duration:.5s;
+          animation-fill-mode: both;
+        }
+        .squareImage,
+        .largeIcon {
+          animation-name: fadeInUp;
+          animation-delay:1s;
+          animation-duration:1s;
+          animation-fill-mode: both;
+        }
+      }
+    }
+  }
+}
+.noLogo h1 {
+  transition:margin .3s, opacity .3s, font-size .2s;
+}
+.scrollMenu span,
+.mobileButton span {
+  transition:background-color 3s;
+}
+.scrollMenu i,
+.prevIcon,
+.nextIcon {
+  transition:color 3s;
+ }
+.logoWrapper img {
+  @media(min-height: 800px) and (min-width:65em) {
+    transition:filter 3s, opacity .3s, width.3s;
+  }
+}
+.mobileNavWrapper {
+  transition:background-color .3s;
+  transition-delay:.3s;
+}
+.mobileButtonWrapper {
+  transition:padding .3s;
+}
+
+/* Mobile menu transitions */
+.navWrapper {
+  transition:opacity 3s, margin-right .3s;
+  transition-delay:.5s, 1s;
+  transition-timing-function: ease-in;
+  li {
+    opacity:0;
+    transition:opacity 1s;
+    @for $i from 1 through 30 {
+        &:nth-child(#{$i}n) {
+            transition-delay: #{$i * 0.025}s;
+        }
+    }
+  }
+}
+.navigationOpen {
+  li {
+    opacity:1;
+  }
+  &.navWrapper {
+    transition:margin-right .3s;
+    transition-delay:0;
+    transition-timing-function: ease-out;
+  }
+}
+@include breakpoint(40em) {
+  .children {
+    transition:opacity .5s;
+  }
+  a{
+    transition:color .3s;
+  }
+  span {
+    transition:color .3s;
+  }
+  .button {
+    transition: background 0.3s, color 0.3s, opacity 0.3s;
+  }
+}
+@include breakpoint(65em) {
+  .menu,
+  .navLabourWrapper ul,
+  .navWrapper li:last-child,
+  .navWrapper li:first-child  {
+    transition:margin .3s;
+  }
+  .navWrapper li:last-child,
+  .navWrapper li:first-child  {
+    transition-delay:.75s;
+  }
+  .navRight,
+  .navLeft {
+    transition:height .3s;
+  }
+  .mainNav {
+    transition:margin .3s, height .3s;
+  }
+  .logoWrapper span{
+    transition:height .3s, width .3s, margin .3s;
+  }
+  .owl-dot,
+  .owl-next,
+  .owl-prev,
+  .scrollMenu li,
+  .children,
+  .sub-menu, {
+    transition:opacity .3s;
+  }
+  .navWrapper {
+    li {
+      opacity:1;
+    }
+    a{
+      transition:opacity .3s,color .3s;
+    }
+  }
+  .children,
+  .sub-menu {
+    transition-delay:.5s;
+  }
+  .nextPrev {
+    &.next,
+    &.prev {
+      transition:background-color 0.3s,color 0.3s,margin 0.3s,opacity 0.3s;
+      transition-delay:0,0,.5s,0;
+    }
+  }
+}
+.introSection {
+    &.textLeft {
+      .first {
+        animation-delay:1.5s;
+      }
+      .squareImage {
+        animation-delay:1.75s;
+      }
+    }
+    &.textRight {
+      .column04 {
+        animation-delay:1.5s;
+      }
+      .squareImage {
+        animation-delay:1.75s;
+      }
+    }
+  .headerWrapper {
+    transition:background-color 1s;
+  }
+}
+
+//blog post grid animation
+.postGridItem {
+  animation-name: fadeInUp;
+  animation-duration:.75s;
+  animation-fill-mode: both;
+}
+
+@for $i from 1 through 30 {
+    .postGridItem:nth-child(#{$i}n) {
+        animation-delay: #{$i * 0.5}s;
+    }
+}
+
+//Activity map animation
+#activityMap {
+  animation-name: fadeInUp;
+  animation-delay:1s;
+  animation-duration:2s;
+  animation-fill-mode: both;
+}
+//Animations
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-$basePadding*2, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d($basePadding*2, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, $basePadding, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,0 +1,551 @@
+/* NAVIGATION */
+.headerWrapper {
+    background-color:transparent;
+    z-index:2;
+    @include breakpoint(65em) {
+        position:fixed;
+        display:flex;
+        align-items:center;
+    }
+    @media(max-height: 800px) and (min-width:65em) {
+         position:absolute;
+    }
+    @media(min-height: 800px) and (min-width:65em) {
+        &.header-small {
+           background-color:$colourBodyInvert;
+        }
+    }
+}
+.navFix {
+    position:fixed;
+    width: 100%;
+    @include breakpoint(65em) {
+        position:relative;
+    }
+    .mobileNavWrapper {
+        background-color:transparent;
+    }
+    .mobileButtonWrapper {
+        padding:$basePadding 0;
+    }
+}
+/* ------- MAIN NAV ----------*/
+.navWrapper {
+    position:relative;
+    ul {
+        padding:0;
+        margin:0;
+        list-style:none;
+        display:block;
+        @include breakpoint(65em) {
+            width:100%;
+            text-align:left;
+        }
+    }
+    .mainNav,
+    .menu {
+        text-align:center;
+        width:100%;
+        @include breakpoint(65em) {
+            width:auto;
+            text-align:inherit;
+        }
+    }
+    li {
+        margin-bottom:$basePadding/2;
+        @include breakpoint(65em) {
+            display:inline-block;
+            margin-bottom:0;
+            margin-right:$basePadding/2;
+            &:last-child{
+                //margin-right:$basePadding;
+            }
+        }
+        @include breakpoint(80em) {
+            margin-right:$basePadding;
+            &:last-child{
+                margin-right:$basePadding*2;
+            }
+            li {
+                margin-right:0;
+            }
+        }
+    }
+    a {
+        color:$colourBody;
+        &:hover {
+            color:inherit;
+            opacity:.7;
+        };
+        @include breakpoint(65em) {
+        }
+    }
+    .navIcon {
+        display:inline-block;
+        margin:$basePadding $basePadding/2 0;
+        span {
+            visibility:hidden;
+            font-size:0;
+        }
+        @include breakpoint(65em) {
+            display:inline-block;
+            margin:inherit;
+            margin:0 $basePadding/1.5 0 0;
+        }
+    }
+}
+.page_item_has_children,
+.menu-item-has-children {
+    position:relative;
+    li {
+        margin:0;
+        display:block;
+        &:last-child,
+        &:first-child {
+            @include breakpoint(65em) {
+                margin:0!important;
+            }
+        }
+    }
+    > a {
+        padding:$basePadding/2 0;
+    }
+    .children,
+    .sub-menu{
+        padding:$basePadding/3 0;
+    }
+    @include breakpoint(65em) {
+        &:hover >{
+            .children,
+            .sub-menu {
+                opacity:1;
+                visibility:visible;
+            }
+        }
+        > a {
+            padding-right:$basePadding/1.25;
+            &:after {
+                content:"";
+                width:0;
+                height:0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid $colourBody;
+                position:absolute;
+                right:0;
+                top:7px;
+            }
+        }
+        > .children,
+        > .sub-menu {
+            display:block;
+            visibility:hidden;
+            opacity:0;
+            position:absolute;
+            width:200px;
+            margin-top:($basePadding/2)-4;
+            padding:$basePadding/3 0;
+            right:0;
+            margin-right:-$basePadding/1.5;
+            background-color:$colourBody;
+            &:before {
+                content:'';
+                position:absolute;
+                top:-7px;
+                right:$basePadding/2;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid $colourBody;
+            }
+            a {
+                display:block;
+                padding:$basePadding/3;
+                text-align:center;
+                color:$colourBodyInvert;
+            }
+            .children,
+            .sub-menu{
+                margin-right:0;
+                margin-top:-$basePadding/3;
+                top:0;
+                right:200px+1;
+                &:before {
+                    display:none;
+                }
+            }
+            .page_item_has_children a{
+                &:after {
+                    right:auto;
+                    left:$basePadding/2;
+                    top:$basePadding/1.6;
+                    border-top: 4px solid transparent;
+                    border-bottom: 4px solid transparent;
+                    border-right:4px solid $colourBody; 
+                }
+            }
+        }
+    }
+}
+.logoWrapper {
+    top:0;
+    left:0;
+    z-index:2;
+    width:75%;
+    @include breakpoint(65em) {
+        width:100%;
+        padding-left:$basePadding;
+    }
+    span {
+        margin:$basePadding/2 0;
+        display:block;
+        width:100%;
+        height:auto;
+        position:relative;
+        img {
+            max-width:auto;
+        }
+        @include breakpoint(65em) {
+            width:auto;
+             margin:$basePadding 0;
+        }
+    }
+    @include breakpoint(65em) {
+        position:relative;
+    }
+}
+#logo {
+    width:75%;
+    @include breakpoint(65em) {
+        width:auto;
+    }
+    @include breakpoint(80em) {
+    }
+
+    &:hover {
+        opacity:.5!important;
+    }
+}
+.invertedLogo {
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+}
+.dark {
+    .invertedLogo {
+        opacity:1;
+    }
+    .mainLogo {
+        opacity:0;
+    }
+}
+.header-small {
+    .mobileButton {
+        top:$basePadding/2;
+        right:$basePadding/2;
+    }
+    @media screen and (min-height: 800px) and (min-width:65em) {
+        .logoWrapper {
+            min-height:auto;
+            span {
+                margin:$basePadding/2 0;
+            }
+        }
+        .mainNav {
+            margin:$basePadding/2 0;
+        }
+        .navWrapper li:last-child {
+            margin-right:$basePadding;
+        }
+        #logo {
+        }
+    }
+}
+
+.navWrapper {
+    position:relative;
+    a {
+    }
+    &.navigationOpen {
+        margin-right:0;
+    }
+    @include breakpoint(65em) {
+        background-color:transparent;
+        //overflow-x:hidden;
+        justify-content: flex-end;
+        a {
+        }
+    }
+}
+.mainNav {
+    @include breakpoint(65em) {
+        justify-content: flex-end;
+        margin:$basePadding 0;
+        font-size:85%;
+        .menu {
+            white-space: nowrap;
+        }
+        &.longMenu {
+            padding: 0
+        }
+    }
+    @include breakpoint(80em) {
+    }
+}
+
+// Navigation left
+.navLeft {
+    .navWrapper {
+        order:1;
+        li{
+            &:first-child{
+                @include breakpoint(65em) {
+                    margin-left:$basePadding;
+                }
+            }
+            &:last-child{
+                margin-right:0;
+            }
+        }
+    }
+    .navWrapper,
+    .mainNav {
+        justify-content:flex-start;
+    }
+    .logoWrapper {
+        order:1;
+        justify-content:flex-start;
+        @include breakpoint(65em) {
+            order:2;
+            justify-content:flex-end;
+        }
+    }
+    #logo{
+        margin-right:$basePadding;
+        margin-left:0;
+        @include breakpoint(80em) {
+            margin-right:$basePadding*1.5;
+        }
+    }
+    @include breakpoint(65em) {
+        .navWrapper li:first-child{
+            margin-left:$basePadding*2;
+        }
+        .children,
+        .sub-menu {
+            right:auto;
+            left:0;
+            margin-right:0;
+            margin-left:-$basePadding/1.5;
+            &:before {
+                right:auto;
+                left:$basePadding/2;
+            }
+            .children,
+            .sub-menu{
+                margin-left:0;
+                right:auto;
+                left:200px;
+            }
+            .page_item_has_children a{
+                &:after {
+                    left:auto;
+                    right:$basePadding/2;
+                    border-top: 4px solid transparent;
+                    border-bottom: 4px solid transparent; 
+                      
+                    border-right:0 solid transparent; 
+                    border-left:4px solid inherit; 
+                }
+            }
+        }
+        .mobileNavWrapper{
+            order:2;
+        }
+        &.header-small {
+            #logo {
+            }
+            .navWrapper li:first-child{
+                margin-left:$basePadding;
+            }
+        }
+    }
+}
+// Navigation left
+.navRight {
+    .navWrapper {
+        li{
+            &:last-child{
+                @include breakpoint(65em) {
+                    margin-right:$basePadding;
+                }
+            }
+        }
+    }
+}
+// Navigation center 
+.navCenter {
+    @include breakpoint(65em) {
+        .headerWrapper {
+            margin:0;
+            width:100%;
+            display:block;
+        }
+        .logoWrapper {
+            margin:auto;
+            width:100%;
+            padding:0 $basePadding;
+            text-align: center;
+            span {
+                margin:$basePadding auto;
+            }
+        }
+        #logo {
+            margin:auto;
+        }
+        .navWrapper {
+            width:90%;
+            margin:auto;
+            ul {
+                text-align:center;
+            }
+            li {
+                margin:0 $basePadding/2;
+                &:last-child {
+                    margin-left:$basePadding/2;
+                }
+            }
+        }
+        .menu {
+            margin:auto;
+        }
+        .mainNav {
+            margin:0 auto $basePadding;
+            height:auto;
+        }
+        .flex {
+            display:block;
+        }
+    }
+    @media screen and (min-height: 800px) and (min-width:65em) {
+        .header-small {
+            .mainNav {
+                height:auto;
+            }
+            .logoWrapper {
+                span {
+                    text-align:center;
+                }
+            }
+            #logo {
+                img,
+                span {
+                    height:0; 
+                    width:0;
+                }
+                span {
+                    margin:$basePadding 0 0;
+                }
+            }
+            #logo.noLogo {
+                span {
+                    opacity:0;
+                    margin:$basePadding/2 auto 0;
+                    font-size:0;
+                }
+            }
+        }
+    }
+}
+
+/* ------------ MOBILE MENU STYLES ------------*/
+.mobileNavWrapper {
+    position:fixed;
+    z-index:100;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    align-items:center;
+    padding:0 $basePadding;
+    justify-content:space-between;
+    &.noLogo {
+        h1 {
+            margin:$basePadding/2 0;
+        }
+    }
+    @include breakpoint(65em) {
+        display:inline;
+        position:relative;
+        background-color:transparent;
+        width:25%;
+        padding:0;
+        &.noLogo {
+        h1 {
+            text-align: center;
+        }
+    }
+    }
+}
+.hideLogo,
+.navFix{ 
+    @media screen and (max-width:65em) {
+        .logoWrapper img {
+            width:0;
+            opacity:0;
+        }
+    }
+}
+.mobileButtonWrapper {
+    width:25%;
+    text-align:right;
+    order:2;
+    padding:$basePadding/2 0;
+    @include breakpoint(65em) {
+        display:inline;
+    }
+}
+.mobileButton {
+    display:inline-block;
+    width:20px;
+    height:14px;
+    &.open {
+    }
+    cursor: pointer;
+    @include breakpoint(65em) {
+        display:none;
+    }
+}
+.mobileButton span {
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: $colourBody;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    cursor: pointer;
+    &:nth-child(1) {
+      top: 0px;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 7px;
+    }
+    &:nth-child(4) {
+      top: 14px;
+    }
+}
+.mobileButton.open span {
+    &:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+    &:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+}

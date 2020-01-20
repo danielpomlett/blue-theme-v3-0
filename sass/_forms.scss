@@ -1,0 +1,120 @@
+/* ------------ FORM STYLES ------------*/
+label,
+.nf-field-label{
+    font-size:inherit;
+    display:block; 
+    font-size:75%;
+    margin:5px 0;
+}
+
+.formElement,
+.ninja-forms-field,
+.dk-speakout-petition input[type=text], 
+.dk-speakout-petition input[type=email], 
+.dk-speakout-petition select {
+    box-sizing:border-box;
+    padding:$basePadding;
+    margin:$basePadding/2 0;
+    background-color:transparent; 
+    border:1px solid #ededed;
+    &:hover, 
+    &:focus {
+        border-color:#ccc;
+    }
+}
+
+input[type="checkbox"] {
+    margin-right:$basePadding/4;
+}
+
+/* buttons */
+.button,
+.ninja-forms-field[type="button"],
+button {
+    font-size:1em;
+    background:$colourAnchor;
+    color:$colourBodyInvert;
+    width: auto;
+    min-width:150px;
+    padding:$basePadding;
+    border:none;
+    display:inline-block;
+    &:hover {
+        background:$colourAnchorHover;
+    }
+    &.secondaryButton {
+        background:$colourBody;
+        &:hover {
+            background:$colourAnchorHover;
+        }
+    }
+}
+/* --------- CONTACT FORM STYLES (contact form 7 and ninja forms)
+---------*/
+body {
+    .wpcf7-response-output,
+    .dk-speakout-response-error{
+        text-shadow:none;
+        border:none !important;
+        line-height:1.2em;
+        text-align:center;
+        width:100%;
+        box-sizing: border-box;
+        padding:$basePadding/2;
+        margin:$basePadding 0 0 0;
+    }
+    .wpcf7-validation-errors,
+    .dk-speakout-response-error {
+        margin-bottom:0!important;
+    }
+    .wpcf7-not-valid-tip,
+    .nf-error-msg{
+        margin-bottom:0;
+        z-index:2;
+        font-weight: normal;
+        display: block;
+        font-size:75% !important;
+        &:after {
+            content:'';
+            border-right: 0 solid transparent;
+            border-left: 15px solid inherit;
+            border-bottom: 15px solid transparent;
+            border-top: 0 solid transparent;
+            position:absolute;
+            bottom:-15px/2;
+            left:-15px;
+        }
+    }
+    .submitWrapper {
+        position:relative;
+    }
+    .ajax-loader {
+        display:none!important;
+        &.is-active {
+            position:absolute;
+            width:36px!important;
+            height:36px!important;
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-size:16px 16px;
+            display:block!important;
+            margin:15px/2 0!important;
+            background-color:inherit;
+            top:-15px*1.5;
+            right:15px/2;
+            &:after {
+                content:'';
+                border-right: 0 solid transparent;
+                border-left: 15px solid inherit;
+                border-bottom: 15px solid transparent;
+                border-top: 0 solid transparent;
+                position:absolute;
+                bottom:-15px/2;
+                left:10px;
+            }
+        }
+    }
+    div.wpcf7 .ajax-loader {
+        background-image:url(../images/loader.svg);
+    }
+}

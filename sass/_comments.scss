@@ -1,0 +1,22 @@
+/* --------- COMMENT STYLES 
+---------*/
+.commentList {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.commentWrapper{
+	@include breakpoint(40em) {
+		position:relative;
+		padding-left:50px + $basePadding*2;
+	}
+}
+.avatar {
+	background-color:$colourBodyInvert;
+	margin:0 auto $basePadding/2;
+	@include breakpoint(40em) {
+		position:absolute;
+		top:0;
+		left:0;
+	}
+}

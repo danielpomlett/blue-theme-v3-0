@@ -1,0 +1,78 @@
+/* --------- SHARIFY STYLES 
+---------*/
+/* sharify styles */
+body .sharify-container {
+	 li{
+	    a {
+          color:$colourBody;
+	    }
+	}
+}
+
+/* ------------------------ WORDPRESS CLASSES ---------------------------*/
+
+/* image alignment */
+    .alignnone {
+        margin:$basePadding auto;
+    }  
+
+
+    .alignleft {
+        margin-bottom:$basePadding;
+        @include breakpoint(40em) {
+            margin:0 $basePadding $basePadding 0;
+        }
+    }
+
+    .alignright {
+        margin-bottom:$basePadding;
+        @include breakpoint(40em) {
+            margin:0 0 $basePadding $basePadding;
+        }
+    }
+
+    .aligncenter {
+        margin:$basePadding auto; 
+    }  
+    
+/* image captions */
+    .wp-caption {
+        padding:$basePadding/2; 
+    }
+
+    .wp-caption p.wp-caption-text {
+        margin-bottom:0; 
+        margin-top:$basePadding/2;
+    } 
+/* ------------ GENERAL STYLES ------------*/
+.outerPadding {
+    padding:0 $basePadding;
+    @include breakpoint(65em) {
+        padding:0;
+    }
+}
+.innerPadding2 {
+    padding:$basePadding;
+    @include breakpoint(40em) {
+
+    }
+    @include breakpoint(65em) {
+        padding:$basePadding*2 0;
+    }
+    @include breakpoint(80em) {
+
+    }
+}
+
+body {
+    color:$colourBody;
+    background:$colourBodyInvert;
+}
+
+/* ------------ TABLES  ------------*/
+table {
+    margin-bottom:$basePadding;
+    th {
+        text-align: left;
+    }
+}

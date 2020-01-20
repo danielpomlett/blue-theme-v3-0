@@ -1,0 +1,138 @@
+@import 'neat/neat';
+/* ------------ NEAT GRID: 
+https://neat.bourbon.io/docs/latest/
+Grid container (with clear fix): @include grid-container;
+collapse padding: @include grid-collapse;
+define column width: @include grid-column(3);
+Push or pull a grid column : @include grid-push(3);
+Shift columns and reorder with relative pos: @include grid-shift(3);
+Add grid guidelines: @include grid-visual;
+------------*/
+$neat-grid12ths: (
+  columns: 12,
+  gutter: $basePadding*2,
+);
+.grid {
+	@include breakpoint(40em) {
+		@include grid-container;
+		&.collapse {
+			@include grid-collapse($neat-grid12ths);
+		}
+		.column01{
+			@include grid-column(1, $neat-grid12ths);
+		}
+		.column02{
+			@include grid-column(2, $neat-grid12ths);
+		}
+		.column03{
+			@include grid-column(3, $neat-grid12ths);
+		}
+		.column04{
+			@include grid-column(4, $neat-grid12ths);
+		}
+		.column05{
+			@include grid-column(5, $neat-grid12ths);
+		}
+		.column06{
+			@include grid-column(6, $neat-grid12ths);
+		}
+		.column07{
+			@include grid-column(7, $neat-grid12ths);
+		}
+		.column08{
+			@include grid-column(8, $neat-grid12ths);
+		}
+		.column09{
+			@include grid-column(9, $neat-grid12ths);
+		}
+		.column10{
+			@include grid-column(10, $neat-grid12ths);
+		}
+		.column11{
+			@include grid-column(11, $neat-grid12ths);
+		}
+	}
+}
+/* ------------ FLEX BOX  
+------------*/
+.flex {
+	display: flex;
+    align-items: center;
+    &.end {
+    	justify-content: flex-end;
+    }
+    &.center {
+    	justify-content: center;
+    }
+}
+
+/* ------------ MAIN WRAPPER LAYOUT  
+------------*/
+.outerWrapper {
+	width:100%;
+	overflow-x:hidden;
+	position:relative;
+}
+.mainWrapper {
+	float:right;
+	width:200%;
+}
+.introWrapper {
+    width:50%;
+    float:right;
+    @include breakpoint(65em) {
+        width:100%;
+        float:none;
+    }
+}
+.contentWrapper {
+	min-height:90vh;
+	float:right;
+	width:50%;
+}
+.navWrapper {
+	min-height:100vh;
+	float:right;
+	margin-right:-50%;
+	width:50%
+}
+.widthWrapper {
+	margin:auto;
+	max-width:960px;
+}
+
+@include breakpoint(40em) {
+	.navWrapper {
+	}
+	.headerWrapper {
+	}
+} 
+@include breakpoint(65em) {
+	.mainWrapper {
+		width:100%;
+	}
+	.contentWrapper{
+		width:auto;
+		float:none;
+	}
+	.headerWrapper {
+		height:auto;
+		width:100%;
+	}
+	.mobileNavWrapper {
+		float:none;
+	}
+	.navWrapper {
+		width:75%;
+		margin:0;
+		padding-bottom:0;
+		min-height:auto;
+		float:none;
+	}
+}
+@include breakpoint(90em) {
+	.logoWrapper {
+	}
+	.navWrapper {
+	}
+}

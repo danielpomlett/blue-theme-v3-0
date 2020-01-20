@@ -1,0 +1,51 @@
+Searching 3093 files for "blue_theme" (regex)
+
+/Applications/MAMP/htdocs/base_theme/wp-content/themes/blue_theme_3/footer.php:
+    7: 				<?php if(get_theme_mod( 'blue_theme_logo')){?>
+   11: 							<h1><img src='<?php echo esc_url( get_theme_mod( 'blue_theme_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></h1>
+
+/Applications/MAMP/htdocs/base_theme/wp-content/themes/blue_theme_3/functions.php:
+  177: add_action( 'customize_preview_init', 'blue_theme_customiser' );
+  178: function blue_theme_customiser() {
+
+/Applications/MAMP/htdocs/base_theme/wp-content/themes/blue_theme_3/includes/customiser/custom_css.php:
+    2: add_action( 'wp_head', 'blue_theme_customizer_css');
+    3: function blue_theme_customizer_css()
+    7:          	/*<?php if(get_theme_mod('blue_theme_bg_colour')){?>
+    8:              	body { background: <?php echo get_theme_mod('blue_theme_bg_colour', ''); ?>; }
+
+/Applications/MAMP/htdocs/base_theme/wp-content/themes/blue_theme_3/includes/customiser/customiser.js:
+    2: wp.customize( 'blue_theme_bg_colour', function( value ) {
+
+/Applications/MAMP/htdocs/base_theme/wp-content/themes/blue_theme_3/includes/customiser/customiser.php:
+    2: add_action( 'customize_register', 'blue_theme_theme_customizer' );
+    3: function blue_theme_theme_customizer( $wp_customize ) {
+    6:     $wp_customize->add_section( 'blue_theme_logo_section' , array(
+    7:         'title'       => __( 'Theme settings', 'blue_theme' ),
+   12:     $wp_customize->add_setting( 'blue_theme_logo');
+   13:     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'blue_theme_logo', array(
+   14:         'label'    => __( 'Small logo', 'blue_theme' ),
+   16:         'section'  => 'blue_theme_logo_section',
+   17:         'settings' => 'blue_theme_logo',
+   21:     $wp_customize->add_setting( 'blue_theme_header_layout');
+   22:     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'blue_theme_header_layout', array(
+   25:     'section'    => 'blue_theme_logo_section',
+   26:     'settings'   => 'blue_theme_header_layout',
+
+/Applications/MAMP/htdocs/base_theme/wp-content/themes/blue_theme_3/includes/nav_main.php:
+    1: <header class="collapse headerWrapper <?php if(!(is_home() || is_archive())){ echo 'hasIntro ';} if(!get_theme_mod( 'blue_theme_logo')){echo'navCenter';}else{echo get_theme_mod('blue_theme_header_layout');}?>">
+    8: 	<?php if ( get_theme_mod( 'blue_theme_logo' ) ) : ?>
+   11: 					<h1><img src='<?php echo esc_url( get_theme_mod( 'blue_theme_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></h1>
+   15: 			<?php list($width, $height) = getimagesize(esc_url( get_theme_mod( 'blue_theme_logo' ) ));
+
+27 matches across 6 files
+
+
+Searching 3093 files for "SR_translate" (regex)
+
+0 matches across 0 files
+
+
+Searching 3093 files for "SR_translate" (regex)
+
+0 matches across 0 files

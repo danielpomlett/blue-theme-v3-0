@@ -1,0 +1,32 @@
+/* Carousel section */
+.carouselWrapper {
+    text-align:center;
+}
+.slide {
+    position:relative;
+}
+.slideImage {
+    padding-bottom:60%;
+    background-size:cover;
+    background-position:center center;
+}
+.slideCaption {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:$basePadding/3 0;
+    background-color:$colourBodyInvert;
+    font-size:85%;
+    span {
+        margin:0 3px;
+    }
+}
+.activeSection {
+    @include breakpoint(65em) {
+        .squareImage,
+        .service,
+        .copyWrapper {
+        }
+    }
+}
